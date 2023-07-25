@@ -1,0 +1,90 @@
+@import '../../styles/global.scss';
+
+.habits-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: $font-family-secondary;
+  text-align: center;
+  background-color: $color-light;
+
+  .fixed-btn-container {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+
+    .habit-form-toggle-btn,
+    .tutorial-btn {
+      background-color: $color-important-secondary;
+      color: $color-light;
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      margin: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: $box-shadow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+
+    h1 {
+      color: $color-important-primary;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include respond-medium {
+        font-size: 1.5rem;
+      }
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-important-primary;
+      margin-right: 0.2rem;
+      font-size: 2rem;
+      transition: max-height 0.5s ease-in-out;
+
+      &.down {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .headline_week_plan {
+    margin-bottom: 1rem;
+  }
+
+  .content-parent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+
+    .content {
+      border: 1px solid rgba(255, 255, 255, 0);
+
+      .statistics-section {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
